@@ -27,8 +27,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         actionButton.layer.cornerRadius = 10
         
-        redLabel.layer.masksToBounds = true
+//        redLabel.layer.masksToBounds = true
         redLabel.layer.cornerRadius = redLabel.frame.height / 2
+        redLabel.clipsToBounds = true
         
         yellowLabel.layer.masksToBounds = true
         yellowLabel.layer.cornerRadius = yellowLabel.frame.height / 2
@@ -37,9 +38,9 @@ class ViewController: UIViewController {
         greenLabel.layer.cornerRadius = greenLabel.frame.height / 2
     }
 
-    @IBAction func moveColor(_ sender: Any) {
+    @IBAction func moveColor() {
         actionButton.setTitle("NEXT", for: .normal)
-        
+            
         switch currentColor {
         case .red:
             greenLabel.alpha = activeColorOff
